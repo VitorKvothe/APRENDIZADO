@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Allowance updater example</title>
+  </head>
+  <body>
+    <label for="shopping-check">Você fez todas as suas tarefas essa semana? </label>
+    <input type="checkbox" id="shopping-check">
+
+    <p></p>
+
+    <script>
+      const checkBox = document.querySelector('input');
+      const para = document.querySelector('p');
+      let shoppingDone = false;
+      var childsAllowance;
+
+      checkBox.addEventListener('change', () => {
+        if (checkBox.checked === true){
+          shoppingDone = true;
+        updateAllowance();
+        } else {
+          shoppingDone = false;
+        updateAllowance();
+        }});
+
+      function updateAllowance() {
+        
+        if (shoppingDone === true) {
+          childsAllowance = 10;
+          para.textContent = `Parabéns, você completou todas as suas tarefas e recebeu \$${childsAllowance} essa semana.`;
+        } else {
+          childsAllowance = 5;
+          para.textContent = `Você Não fez as tarefas e recebeu \$${childsAllowance} essa semana, Complete todas as tarefas pra receber um bonus.`;
+        }
+
+        
+      }
+
+
+      updateAllowance();
+    </script>
+  </body>
+</html>

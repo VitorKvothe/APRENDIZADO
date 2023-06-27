@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Conditionals: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body>
+
+    <section class="preview"></section>
+
+  </body>
+  
+  
+  <script>
+    let response;
+    var score = 40;
+    let machineActive = true;
+    
+  
+    // Add your code here
+    if (machineActive === true){
+pontuacao();
+} else {
+response = 'Ligue a Maquina'
+}
+
+function pontuacao(){ 
+let ponto = score;
+if (ponto < 0 || ponto > 100) {
+response = 'Isso não é possível, ocorreu um erro';
+} else if (ponto >= 0 || ponto <= 19) {
+response = 'Foi uma pontuação terrível — falha total!'
+} else if (ponto >= 20 || ponto <= 39) {
+response = 'Você sabe de algumas coisas, mas é uma pontuação muito ruim. Precisa de melhorias.';
+} else if (ponto >= 40 || ponto <= 69) {
+response = 'Você fez um trabalho passável, não é ruim!';
+} else if (ponto >= 70 || ponto <= 89) {
+response = 'Essa é uma ótima pontuação, você realmente sabe suas coisas.';
+} else {
+response = 'Que pontuação incrível! Você trapaceou? Você é de verdade?';
+}
+  }
+
+
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+
+    let para1 = document.createElement('p');
+    let para2 = document.createElement('p');
+
+    para1.textContent = `Your score is ${ score }`;
+    para2.textContent = response;
+
+    section.appendChild(para1);
+    section.appendChild(para2);
+    
+  </script>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Previsão do tempo</title>
+    </head>
+    <body>
+
+        <label for="weather">Escolha o tipo de clima hoje: </label>
+<select id="weather">
+  <option value="">--Selecione o Clima--</option>
+  <option value="sol">Ensolarado</option>
+  <option value="chuva">Chuvoso</option>
+  <option value="neve">Nevando</option>
+  <option value="nublado">Nublado</option>
+</select>
+
+
+<h1>This is my website</h1>
+<label for="theme">Select theme: </label>
+<select id="theme">
+  <option value="white">White</option>
+  <option value="black">Black</option>
+  <option value="purple">Purple</option>
+  <option value="yellow">yellow</option>
+  <option value="psychedelic">Psychedelic</option>
+</select>
+
+<p></p>
+
+
+<script>
+var select = document.querySelector('select');
+var para = document.querySelector('p');
+var html = document.querySelector('html');
+var tema = document.getElementById('theme')
+document.body.style.padding = '10px';
+
+select.addEventListener('change', setWeather);
+
+
+
+function setWeather() {
+  var choice = select.value;
+
+  switch (choice) {
+    case 'sol':
+      para.textContent = 'Está Limpo e ensolarado lá fora hoje. Use shorts! Vá à praia ou ao parque e tome um sorvete.';
+      break;
+    case 'chuva':
+      para.textContent = 'A chuva está caindo lá fora; leve uma capa de chuva e um guarda-chuva, e não fique fora por muito tempo.';
+      break;
+    case 'neve':
+      para.textContent = 'A neve está caindo - está congelando! Melhor ficar em casa com uma xícara de chocolate quente ou construir um boneco de neve.';
+      break;
+    case 'nublado': 
+     para.textContent = 'Não está chovendo, mas o céu está cinza e sombrio; pode virar a qualquer minuto, então leve uma capa de chuva para o caso.';
+     break;
+    
+    default: 
+    para.textContent = '';
+  }
+
+ 
+}
+function update(bgColor, textColor) {
+  html.style.backgroundColor = bgColor;
+  html.style.color = textColor;
+  
+}
+theme.addEventListener('change', Tema)
+function Tema() {
+  var temas = theme.value;
+  switch (temas) { 
+  case 'white': 
+update('white', 'black');
+break;
+  case 'black':
+update('black', 'White')
+break;
+  case 'purple':
+update('purple', 'white');
+break;
+  case 'yellow':
+update('yellow', 'black');
+break;
+  case 'psychedelic':
+update('lime', 'purple');
+break;
+default:
+update('White', 'black');
+}
+}
+
+</script>
+    </body>
+    
+</html>
